@@ -1,4 +1,22 @@
+# This is a fun project to learn react with to build a burger.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Important - This project uses Firebase Realtime database
+
+You'll need to create a FireBase project and point to it in the axios-orders.js file by changing the baseURL. it is currently set to my database as follows:
+
+const instance = axios.create({
+  baseURL: 'https://react-my-burger-68857.firebaseio.com/'
+});
+
+You can also add some default ingredients in your database if you like so that they will be added initially when the app starts.
+
+- ingredients
+  - bacon: 0
+  - cheese: 0
+  - meat: 1
+  - salad: 0
 
 ## Available Scripts
 
