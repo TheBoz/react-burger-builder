@@ -1,4 +1,4 @@
-# This is a fun project to learn react with to build a burger.
+# This is a fun project to learn react with to build a burger
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
