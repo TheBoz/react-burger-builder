@@ -1,9 +1,11 @@
 {
-  "name": "burger-basics-01-project-setup",
-  "version": "0.1.0",
+  "name": "react-burger-project",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-utils": "1.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -36,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "react-test-renderer": "^16.9.0",
     "redux-devtools-extension": "^2.13.8"
   }
 }

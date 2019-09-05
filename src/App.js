@@ -5,13 +5,14 @@ import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+// Lazy loading these routes, just to show how it can be done
 // import Checkout from './containers/Checkout/Checkout';
 // import Orders from './containers/Orders/Orders';
 // import Auth from './containers/Auth/Auth';
 import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
 
-// Lazy loading these routes
+// Lazy loading these routes asynchronously on demand
 const asyncCheckout = asyncComponent(() => {
   return import('./containers/Checkout/Checkout')
 });
