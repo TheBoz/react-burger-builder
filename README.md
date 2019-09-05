@@ -6,7 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Important - This project uses Firebase Realtime database
 
-You'll need to create a FireBase project and point to it in the axios-orders.js file by changing the baseURL. it is currently set to my database as follows:
+You'll need to create a FireBase project and point to it in the axios-orders.js file by changing the firebase settings in the shared folder in the firebaseConfig.js file.
+
+/shared/firebaseConfig.js
+export const BASE_URL = '[YOUR_DATABASE_URL]';
+export const PROJECT_WEB_API_KEY = '[YOUR_PROJECT_WEB_API_KEY]';
+
+
 
 const instance = axios.create({
   baseURL: 'https://react-my-burger-68857.firebaseio.com/'

@@ -25,7 +25,7 @@ class BurgerBuilder extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     this.props.onInitIngredients();
 
   }
@@ -59,7 +59,7 @@ class BurgerBuilder extends Component {
   }
 
   purchaseContinueHandler = () => {
-    console.log("CONTINUE button hit, redirect to checkout");
+    // console.log("CONTINUE button hit, redirect to checkout");
     this.props.onInitPurchased();
     this.props.history.push('/checkout');
   }

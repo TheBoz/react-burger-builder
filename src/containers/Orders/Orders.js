@@ -9,12 +9,12 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 class Orders extends Component {
 
   componentDidMount() {
-    console.log('Fetch Orders');
+    // console.log('Fetch Orders');
     this.props.onFetchOrders(this.props.token, this.props.userId);
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     let orders = <Spinner />
     if (!this.props.loading) {
       orders = (

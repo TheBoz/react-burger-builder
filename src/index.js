@@ -14,16 +14,16 @@ import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
 
 // My Custom redux middleware for logging
-const logger = store => {
-  return next => {
-    return action => {
-      console.log('[Middleware] Dispatching', action);
-      const result = next(action);
-      console.log('[Middleware] next state', store.getState());
-      return result;
-    }
-  }
-};
+// const logger = store => {
+//   return next => {
+//     return action => {
+//       console.log('[Middleware] Dispatching', action);
+//       const result = next(action);
+//       console.log('[Middleware] next state', store.getState());
+//       return result;
+//     }
+//   }
+// };
 
 const rootReducer = combineReducers({
   burgerBuilder: burgerBuilderReducer,
@@ -36,7 +36,12 @@ const rootReducer = combineReducers({
 // const store = createStore(reducer, composeEnhancers(applyMiddleware(logger)));
 // Now using the npm package "redux-devtools-extension"
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger, thunk)));
+let store = null
+if (process.env.NODE_ENV === 'development') {
+  store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+} else {
+  store = createStore(rootReducer, applyMiddleware(thunk));
+}
 // const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 const app = (

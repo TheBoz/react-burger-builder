@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
-// import * as actions from '../../store/actions/index';
 
 class Checkout extends Component {
 
@@ -17,7 +16,7 @@ class Checkout extends Component {
   }
 
   render() {
-    console.log('Checkout: ', this.props);
+    // console.log('Checkout: ', this.props);
 
     let summary = <Redirect to="/" />
 //    let summary = "<p>this.props.ing is null</p>"
@@ -44,7 +43,7 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('[MapStateToProps] - ', state);
+  // console.log('[MapStateToProps] - ', state);
   return {
     ings: state.burgerBuilder.ingredients,
     purchased: state.order.purchased

@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-orders';
+import * as firebaseConfig from '../../shared/firebaseConfig';
 
 export const authStart = () => {
   return {
@@ -51,15 +52,15 @@ export const auth = (email, password, isSignUp) => {
       returnSecureToken: true
     }
 
-    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBmLHF1ieG2-QgKCN9MgYsUXx44qHWrbuM';
+    let url = `${firebaseConfig.API_URL}:signInWithPassword?key=${firebaseConfig.PROJECT_WEB_API_KEY}`;
     if (isSignUp) {
-      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBmLHF1ieG2-QgKCN9MgYsUXx44qHWrbuM'
+      url = `${firebaseConfig.API_URL}:signUp?key=${firebaseConfig.PROJECT_WEB_API_KEY}`;
     }
 
     // Get a user token from Firebase
     axios.post(url, AuthData)
       .then(response => {
-        console.log(response);
+        // console.log(response);
 
         // Calculate the expiration date and store in local storage
         const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);

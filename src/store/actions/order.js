@@ -39,7 +39,7 @@ export const purchaseBurger = (orderData, token) => {
 
     axios.post('/orders.json?auth=' + token, orderData)
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
       })
       .catch(error => {
@@ -50,7 +50,7 @@ export const purchaseBurger = (orderData, token) => {
 
 
 export const fetchOrdersSuccess = (orders) => {
-  console.log('fetchOrdersSuccess action')
+  // console.log('fetchOrdersSuccess action')
   return {
     type: actionTypes.FETCH_ORDERS_SUCCESS,
     orders: orders
@@ -81,7 +81,7 @@ export const fetchOrders = (token, userId) => {
     const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`;
     axios.get('/orders.json' + queryParams)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         // Convert firebase data to an array
         const fetchedOrders = [];
         for (let key in res.data) {
@@ -90,7 +90,7 @@ export const fetchOrders = (token, userId) => {
             id: key
           });
         }
-        console.log('Success fetching orders', fetchedOrders)
+        // console.log('Success fetching orders', fetchedOrders)
         dispatch(fetchOrdersSuccess(fetchedOrders));
       })
       .catch(err => {
